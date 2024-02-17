@@ -14,27 +14,128 @@
     <img src="/img/git.jpg" alt="html" class="img">
     <h2 class="text_1">SQL “Structured Query Language”</h2>
     <div class="text">
-            <h5>
-                DDL (Data Definition Language)
-             </h5>
+            <h3>
+                MySQL
+             </h3>
         <p class="text">
-            El lenguaje de definición de datos (DDL) es un subconjunto de SQL. Es un lenguaje para describir los datos y sus relaciones en una base de datos.
+            Es el sistema de gestión de base de datos relacionales (RDBMS) más usado en el mundo en la parte web.
         </p>
              <h5>
-                Tipo de Datos:
+                TIPOS DE DATOS:
              </h5>
              <h5>
-                Char
+                NÚMEROS:
              </h5>
         <p class="text">
-            Clona un repositorio Git existente desde una URL.
+            Si en la base de Datos se necesita almacenar números con o sin decimales, se debe pensar en un tipo de dato Numérico, los cuales tienen su categoría dependiendo del valor como lo muestra la siguiente tabla:
         </p>
+
+        <style>
+            table,th,td{
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <tr>
+                <td>TIPO DE DATO</td>
+                <td>TAMAÑO</td>
+                <td>SINTAXIS</td>
+            </tr>
+            <tr>
+                <td>TINYINT</td>
+                <td>0 a 255</td>
+                <td>edad tinyint</td>
+            </tr>
+            <tr>
+                <td>SMALL INT</td>
+                <td>0 a 65535</td>
+                <td>Puntos small int</td>
+            </tr>
+            <tr>
+                <td>MEDIUM INT</td>
+                <td>0 a 16777215</td>
+                <td>Valor_Articulo medium int</td>
+            </tr>
+            <tr>
+                <td>INT</td>
+                <td>0 a 4294967295. A este tipo de campo se le puede declarar un ancho</td>
+                <td>Valor_Venta int (8)</td>
+            </tr>
+            <tr>
+                <td>BIG INT</td>
+                <td>0 a 18,446*1036</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>FLOAT(M,D)</td>
+                <td rowspan="3">Estos tipos de datos son utilizados para decimales, el tamaño varía según los parámetros. <br>M: Número de la Mantisa. <br>D:Número de Decimales</td>
+                <td>Definitiva_materia float (2,1)</td>
+            </tr>
+            <tr>
+                <td>DOUBLE(M,D)</td>
+                <td>Saldo_cuenta double</td>
+            </tr>
+            <tr>
+                <td>DECIMAL(M,D)<br>(M,D) son opcionales</td>
+                <td></td>
+            </tr>
+        </table>
              <h5>
-                Varchar
+                CARACTERES:
              </h5>
         <p class="text">
-            Agrega archivos al área de preparación (staging) para ser incluidos en el próximo commit.
+            Si en la base de Datos se necesita almacenar caracteres, se debe pensar en un tipo de dato Texto, los cuales tienen su categoría dependiendo de la cantidad de caracteres a almacenar; los tipos de dato texto son los siguientes:
         </p>
+        <style>
+            table,th,td{
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <tr>
+                <td>TIPO DE DATO</td>
+                <td>TAMAÑO MAX.</td>
+                <td>SINTAXIS</td>
+            </tr>
+            <tr>
+                <td>CHAR(X)</td>
+                <td>255  bytes</td>
+                <td>PacIdentificacion char (10)</td>
+            </tr>
+            <tr>
+                <td>SMALL INT</td>
+                <td>0 a 65535</td>
+                <td>Puntos small int</td>
+            </tr>
+            <tr>
+                <td>MEDIUM INT</td>
+                <td>0 a 16777215</td>
+                <td>Valor_Articulo medium int</td>
+            </tr>
+            <tr>
+                <td>INT</td>
+                <td>0 a 4294967295. A este tipo de campo se le puede declarar un ancho</td>
+                <td>Valor_Venta int (8)</td>
+            </tr>
+            <tr>
+                <td>BIG INT</td>
+                <td>0 a 18,446*1036</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>FLOAT(M,D)</td>
+                <td rowspan="3">Estos tipos de datos son utilizados para decimales, el tamaño varía según los parámetros. <br>M: Número de la Mantisa. <br>D:Número de Decimales</td>
+                <td>Definitiva_materia float (2,1)</td>
+            </tr>
+            <tr>
+                <td>DOUBLE(M,D)</td>
+                <td>Saldo_cuenta double</td>
+            </tr>
+            <tr>
+                <td>DECIMAL(M,D)<br>(M,D) son opcionales</td>
+                <td></td>
+            </tr>
+        </table>
              <h5>
                  Int
              </h5>
