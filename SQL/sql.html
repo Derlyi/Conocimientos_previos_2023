@@ -4,224 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h1 class="text_1">SQL</h1>
+    <h1 class="text_1">SQL “Structured Query Language”</h1>
     <p class="text">
         SQL es el lenguaje para administrar y consultar información de bases de datos relacionales.
     </p>
-    <img src="/img/git.jpg" alt="html" class="img">
-    <h2 class="text_1">SQL “Structured Query Language”</h2>
-    <div class="text">
-            <h3>
-                MySQL
-             </h3>
+    <img src="../img/sql.png" alt="html" class="img">
+
+    <h2 class="text_1">DDL (Data Definition Language)</h2>
+   
+        <img src="../img/ddl.png" alt="ddl" class="img">
         <p class="text">
-            Es el sistema de gestión de base de datos relacionales (RDBMS) más usado en el mundo en la parte web.
+            El lenguaje de definición de datos puede tener algunas variaciones respecto al SMBD (Sistema Manejador de Base de Datos) que se utilice para manipularlo, sin embargo existe una codificación estándar que nos permite identificar una serie de características del lenguaje y las sentencias utilizadas en él.
         </p>
-             <h5>
-                TIPOS DE DATOS:
-             </h5>
-             <h5>
-                NÚMEROS:
-             </h5>
+             <h4>
+                CREACIÓN DE LA BASE DE DATOS:
+             </h4>
+    
         <p class="text">
-            Si en la base de Datos se necesita almacenar números con o sin decimales, se debe pensar en un tipo de dato Numérico, los cuales tienen su categoría dependiendo del valor como lo muestra la siguiente tabla:
+            La base de datos es la estructura de almacenamiento principal, la sentencia que se utiliza para su construcción es CREATE. Su sintaxis y modo de uso genérico es: CREATE DATABASE   "Nombre de la Base de Datos".
+        </p>
+        <h4>
+            CREACIÓN DE LAS TABLAS:
+         </h4>
+
+    <p class="text">
+        Para construir las tablas que conforman las bases de datos, se utiliza la sentencia CREATE TABLE. Con ésta se crea la estructura de la tabla, lo cual permite definir las columnas que tiene y definir ciertas restricciones que deben cumplir esas columnas.
+    </p>
+    <h4>
+        CONSIDERACIONES:
+     </h4>
+
+    <p class="text">
+        Los nombres de la tabla y columnas deben conservar las mismas características de un identificador, es decir, no espacios en blanco, de preferencia usar los nemotécnicos definidos en la organización, nombres significativos, no iniciar con números, etc.
+    </p>
+    <h4>
+        MODIFICACIONES A LAS TABLAS:
+     </h4>
+
+    <p class="text">
+        El comando utilizado es ALTER TABLE, este comando tiene algunos atributos que nos permite realizar cambios a una tabla ya creada. Las posibles modificaciones a realizar son: adición de nuevas columnas, eliminación de columnas, cambio de tipo de dato, adición de constraints (restricciones) a las columnas previamente creadas o la eliminación de restricciones.
+    </p>
+    
+    <p class="text">
+        En esta sentencia se utilizan expresiones que determinan el tipo de cambio a incorporar, de la siguiente forma:
+    </p>
+    <ul>
+        <li>
+            ADD (COLUMN o CONSTRAINT): para agregar columnas o restricciones.
+        </li>
+        <li>
+            DROP (COLUMN o CONSTRAINT): para eliminar columnas o restricciones.
+        </li>
+        <li>
+            ALTER / MODIFY : para modificar columnas existentes.
+        </li>
+    </ul>
+
+    <h4>
+        ELIMINACIÓN DE TABLAS:
+     </h4>
+
+    <p class="text">
+        La sentencia DROP TABLE permite eliminar una tabla, siempre y cuando se tengan permisos sobre el objeto, no se encuentre abierta o siendo ingresada por algún usuario o si al eliminarla se infringe alguna regla. El caso más común está relacionado con las llaves foráneas, cuando el contenido de una tabla es referenciada por otra a través de las llaves foráneas.
+    </p>
+
+    <h2 class="text_1">DML (Lenguaje de Manipulación de Datos)</h2>
+
+    <img src="../img/dml.png" alt="ddl" class="img">
+
+        <p class="text">
+            Este lenguaje se utiliza para "manipular" los datos de una base de Datos, es decir Insertar, Borrar, Modificar y Consultar los registros de las tablas que conforman una base de Datos. 
+            <br>
+            <br>
+            Las sentencias DML son:
+        </p>
+        
+             <h4>
+                INSERCIÓN DE DATOS:
+             </h4>
+    
+        <p class="text">
+            La sentencia INSERT se utiliza para agregar los registros a una tabla, es decir que se agregan filas completas de datos a la tabla, previa a la inserción se realiza un proceso de verificación de las restricciones presentes en cada campo, es decir que si el campo es llave primaria, el valor de cada dato a insetar. La fila siempre es agregada al final de la tabla y el valor de cada campo debe coincidir con el tipo de dato establecido para cada columna.
+        <br>
+        <br>
+        Sintaxis:
         </p>
 
-        <style>
-            table,th,td{
-                border: 1px solid black;
-            }
-        </style>
-        <table>
-            <tr>
-                <td>TIPO DE DATO</td>
-                <td>TAMAÑO</td>
-                <td>SINTAXIS</td>
-            </tr>
-            <tr>
-                <td>TINYINT</td>
-                <td>0 a 255</td>
-                <td>edad tinyint</td>
-            </tr>
-            <tr>
-                <td>SMALL INT</td>
-                <td>0 a 65535</td>
-                <td>Puntos small int</td>
-            </tr>
-            <tr>
-                <td>MEDIUM INT</td>
-                <td>0 a 16777215</td>
-                <td>Valor_Articulo medium int</td>
-            </tr>
-            <tr>
-                <td>INT</td>
-                <td>0 a 4294967295. A este tipo de campo se le puede declarar un ancho</td>
-                <td>Valor_Venta int (8)</td>
-            </tr>
-            <tr>
-                <td>BIG INT</td>
-                <td>0 a 18,446*1036</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>FLOAT(M,D)</td>
-                <td rowspan="3">Estos tipos de datos son utilizados para decimales, el tamaño varía según los parámetros. <br>M: Número de la Mantisa. <br>D:Número de Decimales</td>
-                <td>Definitiva_materia float (2,1)</td>
-            </tr>
-            <tr>
-                <td>DOUBLE(M,D)</td>
-                <td>Saldo_cuenta double</td>
-            </tr>
-            <tr>
-                <td>DECIMAL(M,D)<br>(M,D) son opcionales</td>
-                <td></td>
-            </tr>
-        </table>
-             <h5>
-                CARACTERES:
-             </h5>
+        <h4>
+            MODIFICACIÓN DE DATOS:
+         </h4>
+
         <p class="text">
-            Si en la base de Datos se necesita almacenar caracteres, se debe pensar en un tipo de dato Texto, los cuales tienen su categoría dependiendo de la cantidad de caracteres a almacenar; los tipos de dato texto son los siguientes:
+            La sentencia UPDATE se utiliza para realizar modificaciones sobre los datos que se encuentran en los campos de una tabla. El sistema realiza una validación de la integridad de los campos, verificando que los nuevos datos no infrijan ninguna de las restricciones asociadas a los campos. Se debe tener especial cuidado en proporcionar adecuadamente la condición que determina sobre cual o cuales de los registros deben aplicarse los cambios.
+        <br>
+        <br>
+            Sintaxis:
         </p>
-        <style>
-            table,th,td{
-                border: 1px solid black;
-            }
-        </style>
-        <table>
-            <tr>
-                <td>TIPO DE DATO</td>
-                <td>TAMAÑO MAX.</td>
-                <td>SINTAXIS</td>
-            </tr>
-            <tr>
-                <td>CHAR(X)</td>
-                <td>255  bytes</td>
-                <td>PacIdentificacion char (10)</td>
-            </tr>
-            <tr>
-                <td>VARCHAR(X)</td>
-                <td>255 bytes</td>
-                <td>PacNombres varchar (50)</td>
-            </tr>
-            <tr>
-                <td>TINYTEXT</td>
-                <td>255 bytes</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>TINYBLOB</td>
-                <td>255 bytes</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>TEXT</td>
-                <td>65535 bytes</td>
-                <td>Pacpersonalidad text</td>
-            </tr>
-            <tr>
-                <td>FLOAT(M,D)</td>
-                <td rowspan="3">Estos tipos de datos son utilizados para decimales, el tamaño varía según los parámetros. <br>M: Número de la Mantisa. <br>D:Número de Decimales</td>
-                <td>Definitiva_materia float (2,1)</td>
-            </tr>
-            <tr>
-                <td>DOUBLE(M,D)</td>
-                <td>Saldo_cuenta double</td>
-            </tr>
-            <tr>
-                <td>DECIMAL(M,D)<br>(M,D) son opcionales</td>
-                <td></td>
-            </tr>
-        </table>
-             <h5>
-                 Int
-             </h5>
+
+        <h4>
+            ELIMINACIÓN DE REGISTROS:
+         </h4>
+
         <p class="text">
-            Crea un commit con los archivos en el área de preparación y un mensaje descriptivo.
+            La sentencia DELETE se utiliza para borrar filas de datos de una tabla. El sistema realiza una validación de la integridad referencial antes de ejecutar la acción. Así como con la modificación se debe tener especial cuidado en proporcionar adecuadamente la condición que determine cual o cuales de los registros deben ser borrados.
+        <br>
+        <br>
+            Sintaxis:
         </p>
-             <h5>
-                 Date
-              </h5>
+
+        <h4>
+            CONSULTA DE DATOS:
+         </h4>
+
         <p class="text">
-            Muestra el estado actual del repositorio, incluyendo archivos modificados, agregados y pendientes de confirmar.
+            Con la sentencia SELECT se visualiza la información de la base de Datos. Los datos que se presentan corresponden a una o más filas de una tabla o también a una o más filas de una o más tablas.
+        <br>
+        <br>
+            Sintaxis:
         </p>
-              <h5>
-                   Text
-             </h5>
+
+        <h3>
+            CLAUSULAS DML:
+         </h3>
+
         <p class="text">
-            Sube los commits locales al repositorio remoto.
+            Las cláusulas DML son palabras clave que se utilizan para modificar o complementar las sentencias DML (SELECT, INSERT, UPDATE y DELETE). Permiten agregar precisión y control a las operaciones que se realizan sobre los datos en una base de datos relacional.
         </p>
-            <h5>
-                Modificadores:
-            </h5>
-            <h5>
-                auto_increment
-            </h5>
+
+        <h4>
+            PREDICADOS DML:
+         </h4>
+
         <p class="text">
-            El valor se va incrementando automáticamente en cada registro. Aplica para números enteros.
+            Los predicados DML son expresiones que se utilizan en las sentencias DML (SELECT, INSERT, UPDATE y DELETE) para definir condiciones que deben cumplirse para que la operación se ejecute. Son una parte fundamental del lenguaje SQL y te permiten realizar operaciones precisas y eficientes sobre los datos en una base de datos relacional.
         </p>
-            <h5>
-                Default
-            </h5>
-        <p class="text">
-            Coloca un valor por defecto, el valor se coloca justo detrás de esta palabra. Aplica para todos tipo de campo excepto TEXT y BLOB.
-        </p>
-            <h5>
-                not null
-            </h5>
-        <p class="text">
-            Impide que un campo sea nulo.
-        </p>
-            <h5>
-                Primary Key
-            </h5>
-        <p class="text">
-            Hace que el campo se considere llave primaria.
-        </p>
-            <h5>
-                Unique
-            </h5>
-        <p class="text">
-            Evita la repetición de valores.
-        </p>
-            <h5>
-                Modificación de objetos creados:
-            </h5>
-            <h5>
-                Modify
-            </h5>
+
+        <h5>
+            Tipos de predicados:
+         </h5>
+
          <p class="text">
-            Modifica un campo, esto puede ser el tipo de dato y/o ancho del campo.
+            <ul>
+                <li>Predicados de comparación: Comparan dos valores utilizando operadores como =, <>, <, >, <= y >=.</li>
+                <li>Predicados lógicos: Combinan dos o más predicados utilizando operadores como AND, OR y NOT.</li>
+                <li>Predicados de existencia: Comprueban si un valor existe o no en una columna.</li>
+                <li>Predicados de tipo de dato: Comprueban el tipo de dato de un valor.</li>
+            </ul>
         </p>
-             <h5>
-                Change
-            </h5>
+
         <p class="text">
-            Modifica el nombre de un campo.
-        </p>
-            <h5>
-                Rename
-            </h5>
+        <h3>
+            TIPOS DE CLAUSULAS:
+         </h3>
+
+         <p class="text">
+        <h4>
+            ALIAS DE COLUMNAS:
+         </h4>
+
         <p class="text">
-            Cambia el nombre a una table.
+            Estos alias se utilizan para ayudar a la visualización del nombre de las columnas al momento de generar el resultado de la consulta, estos nombres son temporales, es decir que sólo se reflejan en salida, bien sea pantalla o impresión, pero no afectan los nombres que los campos tienen en la tabla. Para asignar el alias a un campo se utiliza la cláusula <b>AS</b>.
+        <br>
+        <br>
+        Sintaxis:
         </p>
-            <h5>
-                Drop
-            </h5>
+
+        <h4>
+            CLÁUSULA WHERE:
+         </h4>
+
         <p class="text">
-            Borra Columnas.
+            Esta cláusula es muy importante porque se utiliza para generar resultados basados en condiciones, ya que filtra verticalmente las filas a presentar.
+        <br>
+        <br>
+        Sintaxis:
         </p>
-            <h5>
-                Add
-            </h5>
-        <p class="text">
-            Adiciona columnas a una tabla, es importante informar la ubicación de la nueva columna utilizando AFTER.
-        </p>
+
         <h6>
-            <a href="/index.html" class="button">Inicio</a>
+            <a href="../index.html" class="button">Inicio</a>
         </h6>
 </body>
 </html>
